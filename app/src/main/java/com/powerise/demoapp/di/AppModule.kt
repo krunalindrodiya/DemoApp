@@ -1,5 +1,6 @@
 package com.powerise.demoapp.di
 
+import com.powerise.demoapp.BuildConfig
 import com.powerise.demoapp.splash.di.SplashComponent
 import dagger.Module
 import dagger.Provides
@@ -22,6 +23,6 @@ class AppModule {
     fun provideOkHttpClient(interceptor: HttpLoggingInterceptor) = OkHttpClient.Builder().addInterceptor(interceptor).build()
 
     @Provides
-    fun provideRetrofit(client: OkHttpClient) = Retrofit.Builder().baseUrl("http://www.google.com/").addConverterFactory(GsonConverterFactory.create()).client(client).build()
+    fun provideRetrofit(client: OkHttpClient) = Retrofit.Builder().baseUrl(BuildConfig.SERVER_URL).addConverterFactory(GsonConverterFactory.create()).client(client).build()
 
 }

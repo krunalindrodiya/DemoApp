@@ -1,8 +1,9 @@
 package com.powerise.demoapp.splash.webapi
 
+import com.powerise.demoapp.splash.models.Response
 import retrofit2.Call
 import retrofit2.http.GET
-import retrofit2.http.Path
+import retrofit2.http.Query
 
 
 /**
@@ -10,9 +11,7 @@ import retrofit2.http.Path
  */
 interface SplashApi {
 
-    @GET("/users/{user}/repos")
-    fun reposForUser(
-            @Path("user") user: String
-    ): Call<String>
+    @GET("/feed/")
+    fun getFeed(@Query("page") page: Int, @Query("count") count: Int): Call<ArrayList<Response>>
 
 }

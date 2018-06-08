@@ -23,6 +23,9 @@ android {
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+        buildConfigField "String", "SERVER_URL", "\"https://api-v2.hearthis.at\""
+
     }
     buildTypes {
         release {
@@ -31,9 +34,9 @@ android {
         }
     }
 
-//    dataBinding {
-//        enabled = true
-//    }
+    dataBinding {
+        enabled = true
+    }
 }
 
 
@@ -65,8 +68,8 @@ dependencies {
     implementation 'com.github.bumptech.glide:glide:4.7.1'
     annotationProcessor 'com.github.bumptech.glide:compiler:4.7.1'
 
-//    //databinding dependencies
-//    kapt "com.android.databinding:compiler:$gradle_version"
+    //databinding dependencies
+    kapt "com.android.databinding:compiler:$gradle_version"
 
     //testing dependency
     testImplementation 'junit:junit:4.12'
