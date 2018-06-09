@@ -33,11 +33,13 @@
             android:gravity="center"
             android:text="@{model.error}"
             android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:textColor="@color/colorBlack"
             android:visibility="@{model.progress ? View.GONE : View.VISIBLE}"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Text error" />
 
     </android.support.constraint.ConstraintLayout>
 </layout>
