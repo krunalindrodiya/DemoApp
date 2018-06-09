@@ -29,8 +29,10 @@ class DemoApplication : Application(), HasActivityInjector {
                 .build()
                 .inject(this);
 
-//        if (!BuildConfig.DEBUG) {
-        Timber.plant(LogTree());
-//        }
+        if (BuildConfig.DEBUG) {
+            Timber.plant(Timber.DebugTree());
+        } else {
+            Timber.plant(LogTree())
+        }
     }
 }
