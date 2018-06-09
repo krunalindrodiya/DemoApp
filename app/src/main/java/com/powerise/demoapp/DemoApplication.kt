@@ -3,8 +3,10 @@ package com.powerise.demoapp
 import android.app.Activity
 import android.app.Application
 import com.powerise.demoapp.di.DaggerAppComponent
+import com.powerise.demoapp.utils.LogTree
 import dagger.android.DispatchingAndroidInjector
 import dagger.android.HasActivityInjector
+import timber.log.Timber
 import javax.inject.Inject
 
 
@@ -26,6 +28,9 @@ class DemoApplication : Application(), HasActivityInjector {
                 .application(this)
                 .build()
                 .inject(this);
-    }
 
+//        if (!BuildConfig.DEBUG) {
+        Timber.plant(LogTree());
+//        }
+    }
 }

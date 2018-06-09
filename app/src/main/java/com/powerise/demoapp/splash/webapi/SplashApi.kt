@@ -1,6 +1,6 @@
 package com.powerise.demoapp.splash.webapi
 
-import com.powerise.demoapp.splash.models.Response
+import com.powerise.demoapp.splash.models.AlbumModel
 import retrofit2.Call
 import retrofit2.http.GET
 import retrofit2.http.Query
@@ -12,6 +12,6 @@ import retrofit2.http.Query
 interface SplashApi {
 
     @GET("/feed/")
-    fun getFeed(@Query("page") page: Int, @Query("count") count: Int): Call<ArrayList<Response>>
+    fun getFeed(@Query("page") page: Int, @Query("count") count: Int): Call<ArrayList<AlbumModel>>
 
 }
